@@ -1,5 +1,7 @@
 import { useState } from "react";
+import type { RevealMotion } from "../config";
 import { branchPickLabels, briefFacts } from "../data/site";
+import { Reveal } from "../hooks/Reveal";
 import { useMagnetic } from "../hooks/useMagnetic";
 import s from "./BriefPage.module.css";
 
@@ -12,7 +14,11 @@ interface BriefForm {
 
 const EMPTY_FORM: BriefForm = { project: "", timeline: "", email: "", detail: "" };
 
-export function BriefPage() {
+interface BriefPageProps {
+  motion: RevealMotion;
+}
+
+export function BriefPage({ motion }: BriefPageProps) {
   const [form, setForm] = useState<BriefForm>(EMPTY_FORM);
   const [branch, setBranch] = useState<string>("Web");
   const [sent, setSent] = useState(false);
@@ -24,7 +30,7 @@ export function BriefPage() {
   return (
     <div className={s.page}>
       <div className={s.inner}>
-        <div>
+        <Reveal motion={motion}>
           <div className={s.kicker}>BRIEF</div>
           <div className={s.headline}>Tell us what must not fail.</div>
           <div className={s.lede}>
@@ -39,9 +45,9 @@ export function BriefPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
 
-        <div className={s.formCard}>
+        <Reveal motion={motion} className={s.formCard}>
           <div className={s.formGrid}>
             <div className={s.field}>
               <div className={s.label}>PROJECT</div>
@@ -111,7 +117,7 @@ export function BriefPage() {
                 : "No CRM, no drip campaign. One reply from the people who would build it."}
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );

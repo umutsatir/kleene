@@ -9,13 +9,17 @@ import { NavBar } from "./components/NavBar";
 import { ProgressBar } from "./components/ProgressBar";
 import { WorkPage } from "./components/WorkPage";
 
-function pageFromHash(): PageId {
-  const h = window.location.hash.replace("#", "");
-  return h === "work" || h === "brief" ? h : "home";
+function pathForPage(page: PageId): string {
+  return page === "home" ? "/" : `/${page}`;
+}
+
+function pageFromPath(): PageId {
+  const p = window.location.pathname.replace(/\/+$/, "");
+  return p === "/work" ? "work" : p === "/brief" ? "brief" : "home";
 }
 
 export default function App() {
-  const [page, setPage] = useState<PageId>(pageFromHash);
+  const [page, setPage] = useState<PageId>(pageFromPath);
   const { theme, toggleTheme } = useTheme();
 
   const [tab, setTab] = useState(0);
@@ -26,14 +30,17 @@ export default function App() {
 
   const navigate = useCallback((next: PageId) => {
     setPage(next);
-    window.location.hash = next === "home" ? "" : next;
+    const path = pathForPage(next);
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, "", path);
+    }
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   useEffect(() => {
-    const onHashChange = () => setPage(pageFromHash());
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    const onPopState = () => setPage(pageFromPath());
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   const handleFilter = (f: ProjectFilter) => {
@@ -64,10 +71,11 @@ export default function App() {
           hover={workPageHover}
           onHover={setWorkPageHover}
           onBrief={() => navigate("brief")}
+          motion={revealMotion}
         />
       )}
 
-      {page === "brief" && <BriefPage />}
+      {page === "brief" && <BriefPage motion={revealMotion} />}
 
       <Footer onNavigate={navigate} />
     </div>

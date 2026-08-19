@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useRef } from "react";
+import type { RevealMotion } from "../config";
 import { allProjects } from "../data/work";
 import type { ProjectFilter } from "../data/types";
 import { projectFilters } from "../data/site";
+import { Reveal } from "../hooks/Reveal";
 import { useMagnetic } from "../hooks/useMagnetic";
 import { BrandLockup } from "./BrandLockup";
 import s from "./WorkPage.module.css";
@@ -12,9 +14,10 @@ interface WorkPageProps {
   hover: number;
   onHover: (i: number) => void;
   onBrief: () => void;
+  motion: RevealMotion;
 }
 
-export function WorkPage({ filter, onFilter, hover, onHover, onBrief }: WorkPageProps) {
+export function WorkPage({ filter, onFilter, hover, onHover, onBrief, motion }: WorkPageProps) {
   const pageRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
   const ctaRef = useMagnetic<HTMLButtonElement>();
@@ -68,7 +71,7 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief }: WorkPage
   return (
     <div ref={pageRef} className={s.page}>
       <div className={s.inner}>
-        <div className={s.masthead}>
+        <Reveal motion={motion} className={s.masthead}>
           <div className={s.mastheadLeft}>
             <div className={s.kicker}>ARCHIVE / 2021 — 2026</div>
             <div className={s.title}>
@@ -81,9 +84,9 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief }: WorkPage
             <div className={s.countValue}>{String(projects.length).padStart(2, "0")}</div>
             <div className={s.countLabel}>SYSTEMS SHOWN</div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className={s.filterRow}>
+        <Reveal motion={motion} className={s.filterRow}>
           <div className={s.filters}>
             {projectFilters.map((label) => {
               const count = label === "All" ? allProjects.length : allProjects.filter((p) => p.filter === label).length;
@@ -102,7 +105,7 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief }: WorkPage
             })}
           </div>
           <div className={s.hoverHint}>HOVER A ROW FOR DETAIL</div>
-        </div>
+        </Reveal>
 
         <div className={s.list}>
           {projects.map((p, i) => {
@@ -147,7 +150,7 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief }: WorkPage
           })}
         </div>
 
-        <div className={s.footer}>
+        <Reveal motion={motion} className={s.footer}>
           <div className={s.footerNote}>
             Client names are withheld where the engagement is under NDA. Each row is a system we still get
             paged about — or would, if it broke.
@@ -155,7 +158,7 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief }: WorkPage
           <button ref={ctaRef} type="button" className={s.footerCta} onClick={onBrief}>
             Add yours →
           </button>
-        </div>
+        </Reveal>
       </div>
 
       <div ref={cardRef} className={s.cursorCard}>
