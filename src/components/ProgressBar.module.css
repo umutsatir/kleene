@@ -1,0 +1,9 @@
+.bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 2px;
+  width: 0;
+  background: var(--accent);
+  z-index: 60;
+}
