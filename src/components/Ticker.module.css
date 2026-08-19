@@ -1,0 +1,36 @@
+.wrap {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-soft);
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 34s linear infinite;
+  font-family: "Geist Mono", monospace;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--dim2);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0 22px;
+}
+
+.itemStar {
+  color: var(--accent);
+}
