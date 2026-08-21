@@ -23,7 +23,7 @@ export function Capabilities({ tab, onSelectTab, onWork, motion }: CapabilitiesP
             <div className={s.title}>Three branches, one engineering standard</div>
           </div>
           <div className={s.sub}>
-            Pick a branch — the same review discipline, testing culture and handoff applies to all of them.
+            Pick a branch: the same review discipline, testing culture and handoff applies to all of them.
           </div>
         </Reveal>
 

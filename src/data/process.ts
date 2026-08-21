@@ -15,7 +15,7 @@ export const steps: Step[] = [
     week: "WEEK 02",
     days: "DAY 6–10",
     title: "Thin vertical slice",
-    body: "One real path built end to end — schema, API, screen — deployed to staging you can click.",
+    body: "One real path built end to end: schema, API, screen, deployed to staging you can click.",
     out: "RUNNING SLICE",
     checks: ["Schema + typed API", "One screen, real data", "Preview deploy per PR"],
   },

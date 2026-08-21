@@ -3,7 +3,7 @@ import type { ElementType, HTMLAttributes, ReactNode } from "react";
 import type { RevealMotion } from "../config";
 
 // Single shared IntersectionObserver, mirroring the source's one `this._io` instance for
-// every [data-word] element on the page — batches that enter together get the same
+// every [data-word] element on the page. Batches that enter together get the same
 // staggered `min(i*60, 300)ms` transition delay the original computed per-callback.
 let sharedObserver: IntersectionObserver | null = null;
 

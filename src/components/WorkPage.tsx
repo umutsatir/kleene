@@ -73,7 +73,7 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief, motion }: 
       <div className={s.inner}>
         <Reveal motion={motion} className={s.masthead}>
           <div className={s.mastheadLeft}>
-            <div className={s.kicker}>ARCHIVE / 2021 — 2026</div>
+            <div className={s.kicker}>ARCHIVE / 2021 TO 2026</div>
             <div className={s.title}>
               Everything
               <br />
@@ -153,7 +153,7 @@ export function WorkPage({ filter, onFilter, hover, onHover, onBrief, motion }: 
         <Reveal motion={motion} className={s.footer}>
           <div className={s.footerNote}>
             Client names are withheld where the engagement is under NDA. Each row is a system we still get
-            paged about — or would, if it broke.
+            paged about, or would if it broke.
           </div>
           <button ref={ctaRef} type="button" className={s.footerCta} onClick={onBrief}>
             Add yours →
