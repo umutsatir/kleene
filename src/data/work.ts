@@ -4,12 +4,12 @@ export const featuredWork: FeaturedWork[] = [
   {
     num: "01",
     name: "Field ops platform",
-    meta: "2026 — WEB / MOBILE",
+    meta: "2026 / WEB / MOBILE",
     branch: "WEB / MOBILE",
     status: "SHIPPED",
     desc: "Scheduling and dispatch for a logistics operator, with an offline-tolerant mobile companion.",
     long: "Replaced a spreadsheet-and-phone-calls operation with one dispatch board, a typed API and a courier app that keeps working when the van drives out of coverage.",
-    shot: "PRODUCT SHOT — DISPATCH BOARD",
+    shot: "PRODUCT SHOT / DISPATCH BOARD",
     metrics: [
       { k: "DAILY USERS", v: "4.1k" },
       { k: "P95 ACTION", v: "180ms" },
@@ -20,12 +20,12 @@ export const featuredWork: FeaturedWork[] = [
   {
     num: "02",
     name: "Consumer wallet",
-    meta: "2025 — MOBILE / CHAIN",
+    meta: "2025 / MOBILE / CHAIN",
     branch: "MOBILE / CHAIN",
     status: "SHIPPED",
     desc: "React Native client with session keys, on-ramp integration and social recovery.",
     long: "A wallet built for people who have never heard the word wallet: session keys instead of signing prompts, recovery through contacts, and an on-ramp that hides the chain entirely.",
-    shot: "PRODUCT SHOT — RECOVERY FLOW",
+    shot: "PRODUCT SHOT / RECOVERY FLOW",
     metrics: [
       { k: "INSTALLS", v: "37k" },
       { k: "COLD START", v: "1.4s" },
@@ -37,12 +37,12 @@ export const featuredWork: FeaturedWork[] = [
     num: "03",
     name: "ledger",
     brand: true,
-    meta: "2025 — INFRASTRUCTURE",
+    meta: "2025 / INFRASTRUCTURE",
     branch: "INFRASTRUCTURE",
     status: "PRIVATE",
     desc: "Indexing and settlement infrastructure for L2 applications, in private beta.",
     long: "An indexer that rebuilds its entire state from the chain alone, so a bad deploy is a replay rather than an incident. Settlement reports reconcile to the wei.",
-    shot: "PRODUCT SHOT — INDEXER CONSOLE",
+    shot: "PRODUCT SHOT / INDEXER CONSOLE",
     metrics: [
       { k: "EVENTS / DAY", v: "48M" },
       { k: "REPLAY 30D", v: "22min" },
@@ -54,12 +54,12 @@ export const featuredWork: FeaturedWork[] = [
     num: "04",
     name: "attest",
     brand: true,
-    meta: "2026 — DEVELOPER TOOLING",
+    meta: "2026 / DEVELOPER TOOLING",
     branch: "DEV TOOLING",
     status: "BETA",
     desc: "Invariant attestation that runs in CI and signs every passing build.",
     long: "Write the properties your contracts must hold; attest runs them on every pull request, diffs gas, and signs an attestation you can publish next to the deployment.",
-    shot: "PRODUCT SHOT — CI ATTESTATION",
+    shot: "PRODUCT SHOT / CI ATTESTATION",
     metrics: [
       { k: "INVARIANTS", v: "12/12" },
       { k: "GAS DELTA", v: "-8.4%" },
@@ -79,7 +79,7 @@ export const allProjects: Project[] = [
     desc: "Scheduling and dispatch for a logistics operator, with an offline-tolerant courier app.",
     headline: "4.1k daily users",
     status: "SHIPPED",
-    shot: "PRODUCT SHOT — DISPATCH BOARD",
+    shot: "PRODUCT SHOT / DISPATCH BOARD",
     stack: ["TYPESCRIPT", "REACT", "POSTGRES"],
     metrics: [
       { k: "DAILY USERS", v: "4.1k" },
@@ -96,7 +96,7 @@ export const allProjects: Project[] = [
     desc: "React Native client with session keys, on-ramp integration and social recovery.",
     headline: "37k installs",
     status: "SHIPPED",
-    shot: "PRODUCT SHOT — RECOVERY FLOW",
+    shot: "PRODUCT SHOT / RECOVERY FLOW",
     stack: ["REACT NATIVE", "VIEM", "EXPO"],
     metrics: [
       { k: "INSTALLS", v: "37k" },
@@ -114,7 +114,7 @@ export const allProjects: Project[] = [
     desc: "Indexing and settlement infrastructure for L2 applications, rebuilt from chain state alone.",
     headline: "48M events / day",
     status: "PRIVATE",
-    shot: "PRODUCT SHOT — INDEXER CONSOLE",
+    shot: "PRODUCT SHOT / INDEXER CONSOLE",
     stack: ["RUST", "POSTGRES", "K8S"],
     metrics: [
       { k: "EVENTS / DAY", v: "48M" },
@@ -132,7 +132,7 @@ export const allProjects: Project[] = [
     desc: "Invariant attestation that runs in CI and signs every passing build.",
     headline: "12/12 invariants",
     status: "BETA",
-    shot: "PRODUCT SHOT — CI ATTESTATION",
+    shot: "PRODUCT SHOT / CI ATTESTATION",
     stack: ["SOLIDITY", "FOUNDRY", "TS"],
     metrics: [
       { k: "INVARIANTS", v: "12/12" },
@@ -149,7 +149,7 @@ export const allProjects: Project[] = [
     desc: "Multi-tenant booking and records product for a healthcare group, migrated off legacy PHP.",
     headline: "9 clinics migrated",
     status: "SHIPPED",
-    shot: "PRODUCT SHOT — BOOKING GRID",
+    shot: "PRODUCT SHOT / BOOKING GRID",
     stack: ["TYPESCRIPT", "NEXT", "POSTGRES"],
     metrics: [
       { k: "CLINICS", v: "9" },
@@ -166,7 +166,7 @@ export const allProjects: Project[] = [
     desc: "Offline-first courier client with deterministic route sync over unreliable mobile data.",
     headline: "Offline-first sync",
     status: "SHIPPED",
-    shot: "PRODUCT SHOT — ROUTE VIEW",
+    shot: "PRODUCT SHOT / ROUTE VIEW",
     stack: ["REACT NATIVE", "SQLITE"],
     metrics: [
       { k: "COURIERS", v: "820" },
@@ -183,7 +183,7 @@ export const allProjects: Project[] = [
     desc: "Validator analytics and reward accounting rebuilt from on-chain events only.",
     headline: "Wei-exact accounting",
     status: "SHIPPED",
-    shot: "PRODUCT SHOT — VALIDATOR VIEW",
+    shot: "PRODUCT SHOT / VALIDATOR VIEW",
     stack: ["TS", "VIEM", "REDIS"],
     metrics: [
       { k: "VALIDATORS", v: "1.2k" },

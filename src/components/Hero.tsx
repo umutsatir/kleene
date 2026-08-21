@@ -37,7 +37,7 @@ export function Hero({ onBrief, onWork, motion }: HeroProps) {
       <div className={s.inner}>
         <Reveal motion={motion} className={s.chip}>
           <span className={s.chipDot} />
-          ENGINEERING STUDIO — TAKING WORK FOR Q4 2026
+          ENGINEERING STUDIO / TAKING WORK FOR Q4 2026
         </Reveal>
 
         <Reveal as="h1" motion={motion} className={s.h1}>
@@ -49,7 +49,7 @@ export function Hero({ onBrief, onWork, motion }: HeroProps) {
 
         <Reveal as="p" motion={motion} className={s.lede}>
           We are a small team of engineers shipping web and mobile products, developer tooling, and the
-          distributed infrastructure underneath — blockchain systems among them, never instead of them.
+          distributed infrastructure underneath, blockchain systems among them, never instead of them.
         </Reveal>
 
         <Reveal motion={motion} className={s.ctaRow}>

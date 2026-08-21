@@ -34,7 +34,7 @@ export function BriefPage({ motion }: BriefPageProps) {
           <div className={s.kicker}>BRIEF</div>
           <div className={s.headline}>Tell us what must not fail.</div>
           <div className={s.lede}>
-            Two engineers read every brief — app, API or protocol. You get a scoped technical response within
+            Two engineers read every brief: app, API or protocol. You get a scoped technical response within
             two working days, not a sales call.
           </div>
           <div className={s.facts}>

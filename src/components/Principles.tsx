@@ -19,7 +19,7 @@ export function Principles({ motion }: PrinciplesProps) {
           </div>
           <div className={s.badge}>
             <span className={s.badgeDot} />
-            ENFORCED IN CI — NOT IN A SLIDE
+            ENFORCED IN CI, NOT IN A SLIDE
           </div>
         </Reveal>
 
